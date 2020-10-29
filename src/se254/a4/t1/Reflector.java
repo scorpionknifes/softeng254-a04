@@ -24,6 +24,14 @@ public class Reflector {
     private Object _object;
     private Class<?> _class;
 
+    /**
+     * Constructs a Reflector object that includes the object from the given
+     * qualified classname from param. Throw ClassNotFoundException if classname is
+     * not found.
+     * 
+     * @param classname
+     * @throws ClassNotFoundException
+     */
     public Reflector(String classname) throws ClassNotFoundException {
         _class = Class.forName(classname);
 
@@ -31,11 +39,17 @@ public class Reflector {
             Constructor<?> constructor = _class.getConstructor();
             _object = constructor.newInstance();
         } catch (Exception e) {
-            e.printStackTrace();
+            // Assume no empty constructor is a class that doesn't exist.
             throw new ClassNotFoundException();
         }
     }
 
+    /**
+     * Used to get a list of public fields with their values in the format:
+     * FIELD_NAME: FIELD_VALUE. From the object created by constructor.
+     * 
+     * @return fields
+     */
     public List<String> getPublicField() {
         List<String> fields = new ArrayList<String>();
 
@@ -51,6 +65,12 @@ public class Reflector {
         return fields;
     }
 
+    /**
+     * Used to get a list of public declared methods with no params and their values
+     * in the format: METHOD_NAME(). From the class defined by constructor.
+     * 
+     * @return methods
+     */
     public List<String> getPublicMethod() {
         List<String> methods = new ArrayList<String>();
 
@@ -66,6 +86,14 @@ public class Reflector {
         return methods;
     }
 
+    /**
+     * Used to execute a method by method name on the created object by constructor.
+     * Throws an exception if an error has occured, assume all error is bad method
+     * as method doesn't have params.
+     * 
+     * @param method
+     * @throws Exception
+     */
     public void executeMethod(String method) throws Exception {
         _class.getMethod(method).invoke(_object);
     }
