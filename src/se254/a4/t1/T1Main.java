@@ -38,6 +38,7 @@ public class T1Main {
             classname = args[0];
         }
 
+        // Check if Reflector works if not ask for a working classname.
         while (true) {
             System.out.print("\nEnter a fully qualified class name: ");
             classname = getInput();
@@ -52,6 +53,7 @@ public class T1Main {
 
         System.out.printf("\nAn object has been created for %s\n", classname);
 
+        // Allows user to execute methods inside create object.
         while (true) {
             System.out.println("\nPublic fields:");
             printList(reflector.getPublicField());

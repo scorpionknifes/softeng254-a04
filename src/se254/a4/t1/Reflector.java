@@ -55,6 +55,7 @@ public class Reflector {
 
         for (Field f : _class.getDeclaredFields()) {
             try {
+                // Check if modifier is public
                 if (Modifier.isPublic(f.getModifiers())) {
                     fields.add(f.getName() + ": " + f.get(_object));
                 }
@@ -76,6 +77,7 @@ public class Reflector {
 
         for (Method m : _class.getDeclaredMethods()) {
             try {
+                // Check if param length is zero and modifier is public
                 if (m.getParameterTypes().length == 0 && Modifier.isPublic(m.getModifiers())) {
                     methods.add(m.getName() + "()");
                 }
