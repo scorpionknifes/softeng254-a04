@@ -1,28 +1,23 @@
 package se254.a4.t3;
 
 /**
- * [ADD COMMENTS] Describe the class
+ * Class represents a cleaning job on a floor with a cleaning machine.
  * 
- * @author Author Name: [YOUR NAME] Author UPI: [YOUR UPI]
- * @version Date: [CURRENT DATE] 
+ * @author Author Name: Cheng-Zhen Yang Author UPI: cyan562
+ * @version Date: 29/10/2020
  *
- * Changed Performed: 
- * [Explain the changes made and their rationale. 
- * This description may overlap with the contents of commit messages]
+ * Removed duplicated code and moved function into Floor.rent(). Code
+ * is duplicated from PolishingJob. Feature envy as rent calculation relies 
+ * extensively on floor to operate.
  * 
- * Note: You may create new classes, methods or fields in this package
+ * Remove coupling by passing in primitive values instead of cleaner class.
  *
  */
 
 public class CleaningJob {
-	// The method inputs the floor and cleaner objects and
+    // The method inputs the floor and cleaner objects and
     // calculates the energy consumption cost for cleaning the floor area
-	double cleaningRent(Floor floor, CleaningMachine cleaner) {
-		
-		double floorArea = floor.length() * floor.width();
-		double electricityPerUnitArea = floor.getCondition() * cleaner.getCapability();
-		double energyConsumption = electricityPerUnitArea * floorArea;
-		
-		return energyConsumption * cleaner.costPerUnitElectricity();
-	}	
+    double cleaningRent(Floor floor, CleaningMachine cleaner) {
+        return floor.rent(cleaner.getCapability(), cleaner.costPerUnitElectricity());
+    }
 }

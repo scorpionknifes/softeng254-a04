@@ -1,27 +1,20 @@
 package se254.a4.t3;
 
 /**
- * [ADD COMMENTS] Describe the class
+ * Class represents a cleaning machine with it's capability and cost efficiency
  * 
- * @author Author Name: [YOUR NAME] Author UPI: [YOUR UPI]
- * @version Date: [CURRENT DATE] 
- *
- * [Explain the changes made and their rationale. 
- * This description may overlap with the contents of commit messages]
- * 
- * Note: You may create new classes, methods or fields in this package
- *
+ * @author Author Name: Cheng-Zhen Yang Author UPI: cyan562
+ * @version Date: 29/10/2020
  */
-
 public class CleaningMachine {
 
-	public int getCapability() {
-		// capability defines the efficiency of cleaner
-		return 65; 
-	}
+    public int getCapability() {
+        // capability defines the efficiency of cleaner
+        return 65;
+    }
 
-	public double costPerUnitElectricity() {
-		// cost per unit of electricity consumed by the cleaner
-		return 4.0;
-	}
+    public double costPerUnitElectricity() {
+        // cost per unit of electricity consumed by the cleaner
+        return 4.0;
+    }
 }
