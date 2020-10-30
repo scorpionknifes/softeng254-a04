@@ -14,7 +14,15 @@ package se254.a4.t3;
  *
  */
 public class PolishingJob {
+    /**
+     * The method inputs the floor and polisher objects and calculates the 
+     * energy consumption cost for cleaning the floor area
+     * 
+     * @param floor
+     * @param cleaner
+     * @return rent
+     */
     double polishingRent(Floor floor, PolishingMachine polisher) {
-        return floor.rent(polisher.getCapability(), polisher.costPerUnitElectricity());
+        return floor.calcRent(polisher.getCapability(), polisher.costPerUnitElectricity());
     }
 }

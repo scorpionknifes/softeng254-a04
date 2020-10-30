@@ -15,9 +15,15 @@ package se254.a4.t3;
  */
 
 public class CleaningJob {
-    // The method inputs the floor and cleaner objects and
-    // calculates the energy consumption cost for cleaning the floor area
+    /**
+     * The method inputs the floor and cleaner objects and calculates the 
+     * energy consumption cost for cleaning the floor area
+     * 
+     * @param floor
+     * @param cleaner
+     * @return rent
+     */
     double cleaningRent(Floor floor, CleaningMachine cleaner) {
-        return floor.rent(cleaner.getCapability(), cleaner.costPerUnitElectricity());
+        return floor.calcRent(cleaner.getCapability(), cleaner.costPerUnitElectricity());
     }
 }
