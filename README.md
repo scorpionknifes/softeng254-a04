@@ -1,10 +1,17 @@
-# SE254_Assignment4
-This repository contains the code base for SE254 assignment 4.
+# Softeng254 Assignment 4 - Version Control, Reflection, and Code Quality
 
-For information on how to use it, read the A4 description from Canvas. 
+## Overview
 
-Deadline - Friday 30 Oct 5pm
+Tasks:
+1. Java Reflection (30%)
+2. Adding Tests to your Repo (30%)
+3. Code Smells and Refactoring (40%)
 
-All the best for the assignment.
+[Instructions](SE254-2020-Assignment4.pdf)
 
-~254 Team
+*Tips:* 
+- *don't make ur repo public*
+- *don't overcomplicate stuff*
+- *do task before doing git (saves time on reverting commit message mistakes)*
+
+7.5/7.5
